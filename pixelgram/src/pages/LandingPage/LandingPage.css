@@ -1,0 +1,71 @@
+.landing-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    gap: 2rem;
+    
+    
+}
+
+.landing-img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 1rem; */
+}
+
+.landing-img{
+    width: 40rem
+}
+
+.landing-logo-container{
+    display: flex;
+    gap: 1rem;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.landing-logo{
+    width: 4rem;
+}
+
+.landing-heading{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.landing-title{
+    font-size: 44px;
+    font-weight: 600;
+}
+
+.landing-description{
+    font-size: 32px;
+    font-weight: 200;
+}
+
+.landing-btn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem;
+    gap: 0.5rem;
+    
+}
+
+.landing-signup-btn{
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #6c63ff;
+    color: white;
+    border-radius: 10px;
+}
+
+.landing-login-btn{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(108, 99, 255);
+}
