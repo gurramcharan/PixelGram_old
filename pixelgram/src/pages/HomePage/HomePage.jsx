@@ -1,34 +1,42 @@
-import React,{useContext,useState,useEffect} from 'react'
-import { AuthContext } from '../../Contexts/AuthContext';
+import React, {useContext} from 'react'
+import {AuthContext} from '../../Contexts/AuthContext';
 import {PostContext} from "../../Contexts/PostContext";
-import { useNavigate } from 'react-router-dom';
-
+import {UpperNav} from '../../Components/upperNav/UpperNav';
+import {SideNav} from '../../Components/sideNav/SideNav';
+import {SuggestedUsers} from '../../Components/suggestedUsers/SuggestedUsers';
+import "./HomePage.css"
+import { FilterPosts } from '../../Components/filterPosts/FilterPosts';
+import { PostDisplay } from '../../Components/PostDisplay/PostDisplay';
+import { NewPost } from '../../Components/newPost/NewPost';
 
 export const HomePage = () => {
-  const { active_user } = useContext(AuthContext);
-  const { postState } = useContext(PostContext);
-  const navigate = useNavigate();
-  const [followers, setFollowers] = useState([]);
-  const [homepost, setHomepost] = useState([]);
-  const IsFollowers = active_user.following.map((user) => user.username);
-  const filterHomePost = followers.map((follower) =>
-    postState.allpost.map((post) => {
-      return post.username === follower ? post : null;
-    })
-  );
+    const {active_user} = useContext(AuthContext);
+    const {postState} = useContext(PostContext);
+    
 
-  useEffect(() => {
-    setFollowers(IsFollowers);
-    setHomepost(filterHomePost);
-  }, [active_user]);
-  
-  return (
-    <div>
-        <p>Home</p>
-      {/* {postState.allpost.map((post) => (
-        <PostDisplay item={post} />
-      ))} */}
-      {console.log(postState.curr_user_post)}
-    </div>
-  )
+    const filteredHomePosts = postState.allpost.filter((post) => active_user.username === post.username || active_user.following.some(user => user.username === post.username))
+
+
+    return (
+        <div>
+            <UpperNav/>
+            <div className='home-main-container'>
+                <div className='side-nav'>
+                    <SideNav/>
+                </div>
+                <div className='main-content'>
+                    <p className="main-content-heading">Home</p>
+                    <FilterPosts />
+                    <NewPost />
+                    {filteredHomePosts.map((homepost) => (
+                        <PostDisplay post={homepost} />
+                    ))}
+                </div>
+                <div className="suggested-users">
+                    <SuggestedUsers/>
+                </div>
+            </div>
+            {console.log(postState.allpost)}
+        </div>
+    )
 }

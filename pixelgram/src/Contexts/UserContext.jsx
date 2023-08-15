@@ -23,7 +23,7 @@ export default function UserProvider({ children }) {
   };
   const [userstate, userDispatch] = useReducer(userReducer, userInitial);
   const [filteredusers, setFilteredusers] = useState([]);
-  console.log(filteredusers);
+  
   const getallusers = async () => {
     try {
       const response = await axios.get("/api/users", {});
@@ -82,11 +82,10 @@ export default function UserProvider({ children }) {
     getallusers();
   }, []);
   const HandleSearch = () => {
-    console.log(search.length, search);
     const temp =
       search.length > 0
         ?
-          filteredusers.filter((person) =>
+          [...filteredusers].filter((person) =>
             person.firstName.toLowerCase().includes(search.toLowerCase())
           ) 
         : userstate.users;

@@ -1,25 +1,15 @@
 import React, {useContext, useState} from 'react'
-import {Link} from 'react-router-dom';
+import {Link, Navigate} from 'react-router-dom';
 import {AuthContext} from '../../Contexts/AuthContext';
-import {toast} from "react-toastify";
 import signup from "../../imgs/signup.svg"
 import {AiFillEye, AiFillEyeInvisible} from "react-icons/ai"
 import "./Signup.css"
 
 export const Signup = () => {
-    const {userCredentials, setUserCredentials, SignUp} = useContext(AuthContext);
+    const {userCredentials, setUserCredentials, SignUp, CheckLogin} = useContext(AuthContext);
     const handleSignUp = () => {
         if (!userCredentials.firstname.trim() || !userCredentials.lastname.trim() || !userCredentials.email.trim() || !userCredentials.password.trim() || !userCredentials.username.trim()) {
-            toast.warn("Enter all Credentials!", {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored"
-            });
+            console.log("error")
         } else {
             SignUp(userCredentials);
         }
@@ -36,11 +26,13 @@ export const Signup = () => {
         }
     }
 
-    return (
+    return CheckLogin() ? (
+        <Navigate to="/home" />
+      ) : (
         <div className="signup-main-container">
             <div className="signup-sub-container">
                 <div className="signup-img-container">
-                    <img className='signup-img' src={signup} alt="signup image"/>
+                    <img className='signup-img' src={signup} alt="signup"/>
                 </div>
                 <div className="signup-details-container">
                     <div className='signup-details-heading'>Sign Up</div>

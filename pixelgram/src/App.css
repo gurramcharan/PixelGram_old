@@ -1,0 +1,43 @@
+:root{
+    --primary-color:#6c63ff;
+    --secondary-color:black;
+    --background-color:#e8e8e8;
+    --white-color:white;
+}
+
+.app{
+    margin: 0;
+}
+
+.flex-row{
+    display: flex;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-content{
+    justify-content: center;
+}
+
+.align-items{
+    align-items: center;
+}
+
+.gap1{
+    gap: 1rem;
+}
+
+.gap2{
+    gap: 2rem;
+}
+
+.column-reverse{
+    flex-direction: column-reverse;
+}
+
+.space-between{
+    justify-content: space-between;
+}

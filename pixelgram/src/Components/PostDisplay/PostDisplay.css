@@ -1,0 +1,119 @@
+.postdisplay-main-container{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    background-color: var(--white-color);
+    margin: 1rem 0rem 1rem 1rem ;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 0.2rem rgba(108, 99, 255,0.5);
+    
+}
+
+.postdisplay-user-icon{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    padding: 0.5rem 0rem;
+}
+
+.postdisplay-userdetails-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+.postdisplay-userdetails-link,.postdisplay-edit-delete-container{
+    display: flex;
+}
+
+.postdisplay-userdetails-link{
+    text-decoration: none;
+    color: var(--secondary-color);
+    gap: 0.3rem;
+    align-items: center;
+}
+
+.postdisplay-firstname{
+    font-size: 18px;
+}
+
+.postdisplay-username{
+    font-weight: 200;
+    font-size: 14px;
+}
+
+.postdisplay-edit-delete-container{
+    font-size: 18px;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.postdisplay-delete,.postdisplay-edit{
+    padding-right: 0.5rem;
+}
+
+.postdisplay-edit{
+    color: var(--primary-color);
+}
+
+.postdisplay-delete{
+    color: red;
+}
+
+.postdisplay-follow{
+    color: var(--primary-color);
+    background-color: var(--white-color);
+    border: none;
+    outline: none;
+    padding: 0rem 1rem;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.postdisplay-post-container{
+    padding: 0.5rem
+}
+
+
+.postdisplay-post-img{
+    width: 40rem;
+    height: 20rem;
+    border-radius: 5px;
+    margin-bottom: -1rem;
+}
+
+.postdisplay-post-empty-img{
+    width: 40rem;
+}
+
+.postdisplay-like-bookmark-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    padding: 0rem 1rem;
+    font-size: 20px;
+}
+
+.postdisplay-like-container{
+    display: flex;
+    align-items: center;
+}
+
+.postdisplay-like,.postdisplay-bookmark,.postdisplay-share{
+    cursor: pointer;
+}
+
+.postdisplay-like{
+    color: red;
+}
+
+.postdisplay-likecount{
+    font-size: 16px;
+}
+
+.postdisplay-bookmark{
+    color: var(--primary-color);
+}

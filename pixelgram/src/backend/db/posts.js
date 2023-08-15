@@ -91,7 +91,7 @@ export const posts = [
     media_type: "image",
     content: "A fit body, a calm mind, a house full of love ",
     likes: {
-      likeCount: 12,
+      likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },

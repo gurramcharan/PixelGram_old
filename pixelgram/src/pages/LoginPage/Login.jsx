@@ -1,6 +1,6 @@
 import React,{useState,useContext} from 'react'
 import { AuthContext } from '../../Contexts/AuthContext';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 import "./Login.css"
 import login from "../../imgs/login.svg"
@@ -22,7 +22,7 @@ export const Login = () => {
       }
   }
 
-  const { Login } = useContext(AuthContext);
+  const { Login, CheckLogin } = useContext(AuthContext);
   const [userData, setUserData] = useState({
     username: "",
     password: "",
@@ -49,11 +49,13 @@ export const Login = () => {
     Login(testUserData);
   };
 
-  return (
+  return CheckLogin() ? (
+    <Navigate to="/home" />
+  ) : (
     <div className='login-main-container'>
       <div className='login-sub-container'>
       <div className="login-img-container">
-        <img className='login-img' src={login} alt="Login image" />
+        <img className='login-img' src={login} alt="Login" />
       </div>
       <div className="login-details-container">
         <div className='login-details-heading'>Log In</div>

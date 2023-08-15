@@ -32,7 +32,6 @@ export const AuthProvider = ({children}) => {
 
   //logout function
   const Logout = () => {
-    //navigate("/login");
     authDispatch({ type: "set_token", payload: "" });
     authDispatch({ type: "set_user", payload: {} });
     localStorage.removeItem("data");
@@ -195,6 +194,8 @@ export const AuthProvider = ({children}) => {
       Login,
       Logout,
       active_user,
+      followUser,
+      UnfollowUser,
       authState,
       curr_token,
       authDispatch,

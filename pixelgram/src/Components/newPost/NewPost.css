@@ -1,0 +1,43 @@
+.newpost-main-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    border: 1px dotted var(--primary-color);
+    background-color: var(--white-color);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0 0 0 0.5rem;
+    box-sizing: border-box;
+}
+
+
+
+.newpost-input{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.newpost-btn-container{
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin: 0 1rem;
+}
+
+.newpost-reset-btn,.newpost-submit-btn{
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--white-color);
+}
+
+.newpost-reset-btn{
+    color:red;
+}
+
+.newpost-submit-btn{
+    color: var(--primary-color);
+}

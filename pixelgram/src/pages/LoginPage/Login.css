@@ -43,6 +43,7 @@
 
 .auth-input{
     border: none;
+    background-color: var(--background-color);
     border-bottom: 1px solid black;
     outline: none;
     font-size: 16px;
@@ -50,7 +51,7 @@
 
 .login-password-toggle-btn{
     border: none;
-    background-color: white;
+    background-color: var(--background-color);
     cursor: pointer;
     font-size: 18px;
 }

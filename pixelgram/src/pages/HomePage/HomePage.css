@@ -1,0 +1,25 @@
+.home-main-container {
+    max-width: 1200px;
+    margin: 5rem auto 0 auto; /* Center the container horizontally */
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 20px; /* Adjust the gap as needed */
+  }
+  
+  .side-nav {
+    grid-column: 1;
+  }
+  
+  .main-content {
+    grid-column: 2;
+  }
+  
+  .suggested-users {
+    grid-column: 3;
+  }
+  
+.main-content-heading{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0rem 1rem 1rem -0.3rem;
+}
